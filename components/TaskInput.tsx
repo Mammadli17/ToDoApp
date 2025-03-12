@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, TextInput, Button, StyleSheet, TouchableOpacity, Text } from "react-native";
+import { View, TextInput, TouchableOpacity, Text, StyleSheet } from "react-native";
 import { useTaskStore } from "../store/taskStore";
 import Toast from "react-native-toast-message";
 
@@ -15,10 +15,11 @@ const TaskInput = () => {
     };
 
     return (
-        <View style={styles.inputContainer}>
+        <View style={styles.container}>
             <TextInput
                 style={styles.input}
                 placeholder="Yeni task əlavə et..."
+                placeholderTextColor="#aaa"
                 value={taskText}
                 onChangeText={setTaskText}
             />
@@ -30,12 +31,13 @@ const TaskInput = () => {
 };
 
 const styles = StyleSheet.create({
-    inputContainer: {
+    container: {
         flexDirection: "row",
         alignItems: "center",
         backgroundColor: "#fff",
         borderRadius: 10,
         paddingHorizontal: 15,
+        paddingVertical: 10,
         marginBottom: 15,
         elevation: 3,
         shadowColor: "#000",
@@ -45,15 +47,18 @@ const styles = StyleSheet.create({
     },
     input: {
         flex: 1,
-        borderWidth: 1,
-        padding: 10,
-        borderRadius: 5,
+        fontSize: 16,
+        paddingVertical: 8,
+        paddingHorizontal: 12,
+        borderRadius: 8,
         borderColor: "#ddd",
-        fontSize: 16
+        borderWidth: 1,
+        backgroundColor: "#f9f9f9",
+        color: "#333",
     },
     addButton: {
         backgroundColor: "#4CAF50",
-        borderRadius: 50,
+        borderRadius: 20,
         width: 40,
         height: 40,
         justifyContent: "center",
@@ -67,7 +72,8 @@ const styles = StyleSheet.create({
     addButtonText: {
         fontSize: 24,
         color: "white",
-        fontWeight: "bold"
-    }
+        fontWeight: "bold",
+    },
 });
+
 export default TaskInput;

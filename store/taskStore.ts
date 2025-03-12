@@ -6,6 +6,7 @@ import { getFirestore, collection, addDoc, doc, getDocs, updateDoc, deleteDoc } 
 
 
 //.envye atmadimki islede bilesiz
+//. local stoarage ucun mmkv ve sql lite islede bilerdim, vaxda gore bunu uygun gordum
 
 const firebaseConfig = {
     apiKey: "AIzaSyCnEdIjEHHRZUREXu8bYnYbOxi4jf9pg1E",
